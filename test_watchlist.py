@@ -135,11 +135,11 @@ class WatchlistTestCase(unittest.TestCase):
         self.assertIn('Invalid input.', data)
 
         response = self.client.post('/settings', data=dict(
-            name='Grey Li',
+            name='Yang Guo',
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertIn('Settings updated.', data)
-        self.assertIn('Grey Li', data)
+        self.assertIn('Yang Guo', data)
 
     def test_create_item(self):
         self.login()
